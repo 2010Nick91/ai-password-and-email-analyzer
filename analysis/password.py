@@ -87,7 +87,6 @@ def password(password):
     else:
         feedback["overall"] = "very high risk"
     
-    score = f"{score}/100"
-
-    print(score, feedback)
-    return score, feedback
+    score_str = f"{score}/100"
+    
+    return score, score_str, feedback
