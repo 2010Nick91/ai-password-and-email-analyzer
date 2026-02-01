@@ -73,6 +73,19 @@ def password(password):
         score = 0
     elif score > 100:
         score = 100
+
+    if score == 100:
+        feedback["overall"] = "extremely low risk"
+    elif score >= 79:
+        feedback["overall"] = "low risk"
+    elif score >= 59:
+        feedback["overall"] = "moderate risk"
+    elif score >= 39:
+        feedback["overall"] = "high risk"
+    elif score == 0:
+        feedback["overall"] = "extremely high risk"
+    else:
+        feedback["overall"] = "very high risk"
     
     score = f"{score}/100"
 
