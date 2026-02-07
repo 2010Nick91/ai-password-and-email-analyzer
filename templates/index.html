@@ -1,6 +1,49 @@
-<head>
-    <h1>Welcome to the <em>Private</em> OSINT password analyzer!</h1>
-</head>
 <body>
-    <p>Comming soon!</p>
+    <header>
+        <h1>Welcome to the <strong>OSINT</strong> password analyzer</h1>
+    </header>
+    <main>
+        <p>Enter a password to analyze its strength and potential vulnerabilities.</p>
+        <form action="/" method="post">
+            <input type="text" name="password" placeholder="Enter your password" value="{{ password_input }}" required> 
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if score_str %}
+        <div style="margin-top: 40px; padding: 20px; background-color: #f0f0f0; border-radius: 5px;">
+            <h2>Analysis Results</h2>
+            <div style="font-size: 32px; font-weight: bold; color: #333; margin: 20px 0;">{{ score_str }}</div>
+            <p><strong>Overall Assessment:</strong> {{ feedback.overall }}</p>
+            
+            <h3>Detailed Feedback:</h3>
+            
+            {% if feedback.length %}
+            <div style="margin: 10px 0; padding: 10px; background-color: #e8f4f8; border-left: 4px solid #0066cc;">
+                <span style="font-weight: bold; color: #0066cc;">Length:</span>
+                <span style="color: #333;">{{ feedback.length }}</span>
+            </div>
+            {% endif %}
+
+            {% if feedback.variety %}
+            <div style="margin: 10px 0; padding: 10px; background-color: #e8f4f8; border-left: 4px solid #0066cc;">
+                <span style="font-weight: bold; color: #0066cc;">Character Variety:</span>
+                <span style="color: #333;">{{ feedback.variety }}</span>
+            </div>
+            {% endif %}
+
+            {% if feedback.common_elements %}
+            <div style="margin: 10px 0; padding: 10px; background-color: #e8f4f8; border-left: 4px solid #0066cc;">
+                <span style="font-weight: bold; color: #0066cc;">Common Elements Found:</span>
+                <span style="color: #333;">
+                    {% if feedback.common_elements|length > 0 %}
+                        {{ feedback.common_elements|join(', ') }}
+                    {% else %}
+                        None detected
+                    {% endif %}
+                </span>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </main>
 </body>
