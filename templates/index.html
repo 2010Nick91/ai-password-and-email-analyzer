@@ -7,13 +7,13 @@
         <h1>Private OSINT Password Analyzer</h1>
         <form action="/" method="POST">
             <label for="password">Enter a password to analyze:</label><br>
-            <input type="text" id="password" name="password" placeholder="{{ password }}" required><br><br>
+            <input type="text" id="password" name="password" placeholder="{{ password }}" required>
             <input type="submit" value="Analyze"><br><br>
         </form>
        <main>
         {% if password %}
-            <h2>Analysis Results for "{{ password }}"</h2>
-            <h3><strong>Score</strong>: {{ scorestr }}</h3><br>
+            <h2>Analysis Results for: {{ password }}</h2>
+            <h3><strong>Score</strong>: <span style="color: {{ color }};">{{ scorestr }}</span></h3><br>
             <h2>Feedback</h2>
             <table>
                 {% for item in feedback %}

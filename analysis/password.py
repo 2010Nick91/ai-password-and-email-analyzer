@@ -90,5 +90,19 @@ def password(password):
     score_str = f"{score}/100"
     feedback["common_elements"] = feedback["common_elements"] if feedback["common_elements"] else "none"
     if isinstance(feedback["common_elements"], list):
-        feedback["common_elements"] = ", ".join([i.strip('\\') for i in feedback["common_elements"]])
-    return score, score_str, feedback
+        feedback["common_elements"] = ", ".join([i for i in feedback["common_elements"]])
+
+    if feedback["overall"] == "extremely low risk":
+        color = "#31C839"
+    elif feedback["overall"] == "low risk":
+        color = "#98C042"
+    elif feedback["overall"] == "moderate risk":
+        color = "#E7B21F"
+    elif feedback["overall"] == "high risk":
+        color = "#DA7B2F"
+    elif feedback["overall"] == "very high risk":
+        color = "#D93B2F"
+    elif feedback["overall"] == "extremely high risk":
+        color = "#650808"
+
+    return score, score_str, feedback, color
