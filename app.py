@@ -2,6 +2,9 @@ from flask import Flask, render_template, request
 from analysis.password import password
 
 app = Flask(__name__)
+# Ensure the Flask CLI picks up development/debug mode when importing this module.
+# Setting `ENV` to 'development' enables debug-related behavior when using `flask run`.
+app.config.update(ENV="development", DEBUG=True)
 
 @app.route("/", methods=["GET", "POST"])
 def home():
