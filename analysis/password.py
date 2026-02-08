@@ -88,5 +88,7 @@ def password(password):
         feedback["overall"] = "very high risk"
     
     score_str = f"{score}/100"
-    
+    feedback["common_elements"] = feedback["common_elements"] if feedback["common_elements"] else "none"
+    if isinstance(feedback["common_elements"], list):
+        feedback["common_elements"] = ", ".join([i.strip('\\') for i in feedback["common_elements"]])
     return score, score_str, feedback
