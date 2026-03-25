@@ -9,10 +9,10 @@ of using a given password, not just its complexity.
 
 ## Characteristics:
 
-- Password strength scoring (0-100)
-- OSINT-based risk detection (slightly spanish oriented)
-- Intuitive and simple feedback
-- Simple web interface using flask
+    - Password strength scoring (0-100)
+    - OSINT-based risk detection (slightly spanish oriented)
+    - Intuitive and simple feedback
+    - Simple web interface using flask
 
 ## Instalation:
 
@@ -33,11 +33,11 @@ python3 -m venv venv
 
     - Linux / macOS:
 ```bash
-    source venv/bin/activate
+source venv/bin/activate
 ```
     - Windows:
 ```bash
-    venv\Scripts\activate
+venv\Scripts\activate
 ```
 
 4.- Install dependencies:
@@ -67,7 +67,7 @@ http://localhost
 
 Input:
 ```bash
-    JuanPablo20!
+JuanPablo20!
 ```
 
 Output:
@@ -79,10 +79,10 @@ Output:
 
 ## Project structure:
 
-analysis/ # Password analysis logic
-templates/ # HTML interface
-app.py # Flask application
-requirements.txt # Dependencies
+analysis/          # Password analysis logic
+templates/         # HTML interface
+app.py             # Flask application
+requirements.txt   # Dependencies
 
 ## Limitations:
 
@@ -90,4 +90,3 @@ requirements.txt # Dependencies
     - Does not perform real-time OSINT analysis
     - False positives may be common due to various reasons
     - Scoring system is not scientifically validated
-
