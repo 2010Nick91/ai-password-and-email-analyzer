@@ -74,22 +74,32 @@ JuanPablo20!
 ```
 
 Output:
-    - Score: 69/100
-    - Good length
-    - Excellent variety
-    - Common_elements : pablo, juan
-    - Moderate risk overall
+- Score: 69/100
+- Good length
+- Excellent variety
+- Common_elements : pablo, juan
+- Moderate risk overall
 
 ## Project structure:
 
+```bash
 analysis/          # Password analysis logic
 templates/         # HTML interface
 app.py             # Flask application
 requirements.txt   # Dependencies
+```
 
-## Limitations:
+## Limitations:.txt # Dependencies
+Limitations
+System relies on predefined list of common elements
 
-    - System relies on predefined list of common elements
-    - Does not perform real-time OSINT analysis
-    - False positives may be common due to various reasons
-    - Scoring system is not scientifically validated
+Does not perform real-time OSINT analysis
+
+False positives may occur
+
+Scoring system is not scientifically validated
+
+- System relies on predefined list of common elements
+- Does not perform real-time OSINT analysis
+- False positives may be common due to various reasons
+- Scoring system is not scientifically validated
