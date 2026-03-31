@@ -66,6 +66,15 @@ http://localhost
 
 3.- Enter a password and analyze its risk.
 
+("Protip": You can access the software from any computer connected to the same network!
+When you run the software, you will see something like this printed out on the command line:
+```bash
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.24.108.73:5000
+ ```
+ This means that the software is running on the local network. To access the software from the same computer it is being run in, use the first address. To access the software from any other device connected to the same network, use the second address.)
+
 ## Example:
 
 Input:
