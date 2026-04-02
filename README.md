@@ -31,6 +31,18 @@ cd osint-password-analyzer
 ```bash
 python3 -m venv venv
 ```
+(You may see an error depending on your operating system:
+- Linux:
+If the output of this command is such as
+```bash
+The virtual environment was not created successfully because ensurepip is not available. On Debian/Ubuntu systems, you need to install the python3-venv package...
+```
+Then you have to install the missing component with
+```bash
+sudo apt update && sudo apt install python3-venv
+```
+- Windows / macOS:
+If something such as "No module named venv" is printed out, then your python installation is broken, so you must repair or reinstall it completely.)
 
 3.- Activate the virtual environment:
 
